@@ -1,0 +1,55 @@
+<folder name="debian">
+	<folder name="dists">
+		<folder name="stable">
+			<folder name="main">
+				<folder name="binary-i386"/>
+				<folder name="binary-amd64"/>
+				<folder name="source"/>
+			</folder>
+			<folder name="contrib">
+				<folder name="binary-i386"/>
+				<folder name="binary-amd64"/>
+				<folder name="source"/>
+			</folder>
+			<folder name="non-free">
+				<folder name="binary-i386"/>
+				<folder name="binary-amd64"/>
+				<folder name="source"/>
+			</folder>
+		</folder>
+		<folder name="testing">
+			<folder name="main"/>
+				<folder name="binary-i386"/>
+				<folder name="binary-amd64"/>
+				<folder name="source"/>
+			</folder>		
+			<folder name="contrib">
+				<folder name="binary-i386"/>
+				<folder name="binary-amd64"/>
+				<folder name="source"/>
+			</folder>
+			<folder name="non-free">
+				<folder name="binary-i386"/>
+				<folder name="binary-amd64"/>
+				<folder name="source"/>
+			</folder>
+		</folder>
+		<folder name="unstable">
+			<folde name="main"/>
+				<folder name="binary-i386"/>
+				<folder name="binary-amd64"/>
+				<folder name="source"/>
+			</folder>
+			<folde name="contrib"/>
+				<folder name="binary-i386"/>
+				<folder name="binary-amd64"/>
+				<folder name="source"/>
+			</folder>
+			<folde name="non-free"/>
+				<folder name="binary-i386"/>
+				<folder name="binary-amd64"/>
+				<folder name="source"/>
+			</folder>
+		</folder>			
+	</folder>
+</folder>
