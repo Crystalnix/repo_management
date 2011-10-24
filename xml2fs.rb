@@ -4,18 +4,24 @@ require 'optparse'
 
 include REXML
 
-input = File.new("fs_schemes/fs_scheme.xml")
-doc = Document.new(input)
-
-root = doc.root
-
-def xml_walk(root, prefix)
-  buf = []
-  root.attributes["name"].each { |attr| buf << prefix + '/' + attr }
-  buf.each { |folder| FileUtils.makedirs(folder) }
-  buf.each do |prefix|
-    root.elements.each { |e| xml_walk(e, prefix) }
-  end  
+class XML2FS
+  attr_accessor :scheme
+  attr_accessor :prefix
+  
+  def initialize(scheme, prefix)
+    @input = File.new(scheme)
+    @doc = Document.new(@input)
+    @root = @doc.root
+    @prefix = prefix     
+  end
+  
+  def xml_walk(root = @root, prefix = @prefix)
+    buf = []
+    root.attributes["name"].each { |attr| buf << prefix + '/' + attr }
+    buf.each { |folder| FileUtils.makedirs(folder) }
+    buf.each do |prefix|
+      root.elements.each { |e| xml_walk(e, prefix) }
+    end 
+  end
+  
 end
-
-xml_walk(root, '/tmp/repository')

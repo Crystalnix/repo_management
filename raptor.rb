@@ -21,7 +21,6 @@ def parse_options
   options # return options
 end
 
-
-
- 
- 
+args = parse_options
+xml2fs = XML2FS.new(args[:scheme], args[:prefix])
+xml2fs.xml_walk
